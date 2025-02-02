@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Facts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #007BFF, #0056b3);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #0056b3, #007BFF);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Cat Facts</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const catFacts = [
+            {
+                "fact": "Ancient Companions",
+                "description": "Cats were domesticated around 9,000 years ago in the Near East, primarily for their ability to control pests."
+            },
+            {
+                "fact": "Whisker Sensitivity",
+                "description": "A cat's whiskers are highly sensitive tactile hairs called vibrissae, which help them navigate their environment and detect changes in their surroundings."
+            },
+            {
+                "fact": "Purring",
+                "description": "Cats purr not only when they are content but also when they are frightened or in pain. Purring may have a calming effect and can promote healing."
+            },
+            {
+                "fact": "Unique Communication",
+                "description": "Cats have a unique way of communicating with humans, often using a combination of vocalizations, body language, and facial expressions."
+            },
+            {
+                "fact": "Sleep Lovers",
+                "description": "Cats are known for their love of sleep, averaging 12 to 16 hours of sleep per day. Some cats can sleep up to 20 hours!"
+            },
+            {
+                "fact": "Territorial Creatures",
+                "description": "Cats are territorial animals and often mark their territory by rubbing their scent glands on objects or scratching surfaces."
+            },
+            {
+                "fact": "Superb Jumpers",
+                "description": "Cats can jump up to six times their body length in a single leap, thanks to their powerful leg muscles."
+            },
+            {
+                "fact": "Variety of Breeds",
+                "description": "There are over 70 recognized cat breeds, each with its own unique characteristics, appearance, and personality traits."
+            },
+            {
+                "fact": "Hunting Instincts",
+                "description": "Even domesticated cats retain strong hunting instincts and may hunt small animals, insects, or even toys as a form of play."
+            },
+            {
+                "fact": "Lifespan",
+                "description": "The average lifespan of an indoor cat is around 12 to 15 years, but many can live into their 20s with proper care."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * catFacts.length);
+            const fact = catFacts[randomIndex];
+            document.getElementById('fact').innerText = fact.description;
+        });
+    </script>
+</body>
+</html>
